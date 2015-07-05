@@ -22,7 +22,7 @@ class Client
             $base_uri = 'http://baas.makkoto.com';
         }
 
-        $this->client = new GuzzleHttp\Client(['base_uri' => $base_uri]);
+        $this->client = new \GuzzleHttp\Client(['base_uri' => $base_uri]);
 
         if ( ! isset($_SESSION))
         {
