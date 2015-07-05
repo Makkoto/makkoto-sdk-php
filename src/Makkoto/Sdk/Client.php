@@ -12,17 +12,7 @@ class Client
     public function __construct($makkoto_id)
     {
         $this->makkoto_id = $makkoto_id;
-
-        if ($this->makkoto_id === 'sandbox')
-        {
-            $base_uri = 'http://sandbox.makkoto.com';
-        }
-        else
-        {
-            $base_uri = 'http://baas.makkoto.com';
-        }
-
-        $this->client = new \GuzzleHttp\Client(['base_uri' => $base_uri]);
+        $this->client = new \GuzzleHttp\Client(['base_uri' => 'http://baas.makkoto.com']);
 
         if ( ! isset($_SESSION))
         {
@@ -45,11 +35,7 @@ class Client
         return $get_api_details;
     }
 
-    public function request(
-        $method,
-        $resource,
-        array $form_params = array()
-    )
+    public function request($method, $resource, array $form_params = array())
     {
         $body = array(
             'headers' => array(
@@ -81,7 +67,6 @@ class Client
 
     private function get_auth_signature($method, $resource, $api_id, $api_secret)
     {
-        $method = strtoupper($method);
         $canonical_payload = $method."\n".date(DATE_RFC1123).$resource;
         $signature = base64_encode(
             hash_hmac('sha1', $canonical_payload, $api_secret, TRUE)
