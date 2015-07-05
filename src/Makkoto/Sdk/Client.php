@@ -35,11 +35,6 @@ class Client
         }
     }
 
-    public function register(array $form_params)
-    {
-        return $this->request('post', 'user', $form_params);
-    }
-
     public function login(array $form_params)
     {
         $get_api_details = $this->request('post', 'user/api', $form_params);
