@@ -1,0 +1,12 @@
+{
+    "name": "makkoto/makkoto-sdk-php",
+    "description": "Makkoto SDK in PHP",
+    "keywords": ["makkoto", "sdk", "photosharing", "social"],
+    "license": "MIT",
+    "require": {
+        "php": ">=5.4.0",
+        "guzzlehttp/guzzle": "~6.0"
+    },
+    "autoload": {"psr-0": {"": "src"}},
+    "minimum-stability": "dev"
+}
