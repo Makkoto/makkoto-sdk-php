@@ -5,7 +5,8 @@
     "license": "MIT",
     "require": {
         "php": ">=5.4.0",
-        "guzzlehttp/guzzle": "~6.0"
+        "guzzlehttp/guzzle": "~6.0",
+        "mustache/mustache": "dev-master"
     },
     "autoload": {"psr-0": {"": "src"}},
     "minimum-stability": "dev"
